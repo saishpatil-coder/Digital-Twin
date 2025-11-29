@@ -4,6 +4,7 @@ import joblib
 import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
+import os
 
 # --------------------------
 #  LOCAL STORAGE ONLY 🧠
@@ -11,7 +12,6 @@ from fastapi.responses import FileResponse
 history_storage = []    # This acts as our database (in RAM)
 
 # Load model
-import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "thirdmodel.joblib")
 model = joblib.load(MODEL_PATH)
